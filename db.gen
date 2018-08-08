@@ -1,0 +1,12 @@
+CREATE USER postgis PASSWORD 'postgis';
+ALTER USER postgis WITH SUPERUSER;
+CREATE DATABASE gisdb;
+\connect gisdb;
+
+CREATE SCHEMA postgis;
+ALTER DATABASE gisdb SET search_path=public, postgis, contrib;
+
+\connect gisdb;
+CREATE EXTENSION postgis SCHEMA postgis;
+CREATE EXTENSION postgis_sfcgal SCHEMA postgis;
+ALTER SYSTEM SET listen_addresses='*';
