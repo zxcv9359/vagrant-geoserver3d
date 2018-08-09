@@ -56,14 +56,26 @@ cd ~/geoserver/src/web/app/target
 sudo cp -rf geoserver.war /var/lib/tomcat8/webapps/
 sudo service tomcat8 restart
 
+cd ~/
 git clone https://github.com/hgryoo/SimpleWFSClient4Mago3D.git
+cp -rf ~/SimpleWFSClient4Mago3D/Mago3D/* ~/mago3djs/
 cd ~/SimpleWFSClient4Mago3D
-PGPASSWORD=postgis pg_restore --clean -h localhost -p 5432 -U postgis -d gisdb -v ./buildings.dump
+#PGPASSWORD=postgis pg_restore --clean -h localhost -p 5432 -U postgis -d gisdb -v ./buildings.dump
 
 curl -sL https://deb.nodesource.com/setup_10.x| sudo -E bash -
-sudo apt-get install -y nodejs
+sudo apt-get install -y nodejs 
 sudo apt-get install npm -y
 
+cd ~/
 git clone https://github.com/Gaia3D/mago3djs.git
 cd ~/mago3djs
 git checkout develop
+
+sudo npm install
+sudo npm i -g gulp
+gulp
+
+#Install PM2
+sudo npm install -g pm2
+cd ~/mago3djs
+pm2 start server.js
