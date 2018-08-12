@@ -1,5 +1,4 @@
-CREATE USER postgis PASSWORD 'postgis';
-ALTER USER postgis WITH SUPERUSER;
+ALTER USER postgres with password 'postgres';
 CREATE DATABASE gisdb;
 \connect gisdb;
 
