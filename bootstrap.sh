@@ -45,7 +45,7 @@ git clone https://github.com/STEMLab/geoserver.git
 cd ~/geoserver
 git checkout geoserver3d
 cd src
-mvn clean install -DskipTests
+mvn clean install -U -DskipTests
 
 cd web/app
 mvn clean install -DskipTests
