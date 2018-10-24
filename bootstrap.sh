@@ -56,7 +56,7 @@ sudo cp -rf geoserver.war /var/lib/tomcat8/webapps/
 sudo service tomcat8 restart
 
 cd ~/
-git clone https://github.com/hgryoo/SimpleWFSClient4Mago3D.git
+git clone https://github.com/zxcv9359/SimpleWFSClient4Mago3D.git
 cd ~/SimpleWFSClient4Mago3D
 #PGPASSWORD=postgis pg_restore --clean -h localhost -p 5432 -U postgis -d gisdb -v ./buildings.dump
 sudo -u postgres PGPASSWORD=postgres pg_restore -U -i -h localhost -p 5432 -U postgres -d gisdb -v ./buildings.dump
