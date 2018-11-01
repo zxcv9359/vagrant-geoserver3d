@@ -81,4 +81,4 @@ npm install body-parser --save
 #Install PM2
 sudo npm install -g pm2
 cd ~/mago3djs
-sudo node server.js
+pm2 start server.js
